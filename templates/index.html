@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{%block title%}COCKTAILS{%endblock%}</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='js/script.js')}}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="loader">
+		<div class="percentage">100%</div>
+		<div class="heading"><p>COCKTAILS</p></div>
+	</div>
+	<div class="container">
+		<header id="navigation">
+			<div class="logo">
+				<a href="#"><img src="../static/img/logo.png" width="30px" height="30px"></a>
+			</div>
+			<nav class="nav-list">
+				<ul class="nav-menu">
+					<li><a href="{{url_for('mahalo_page')}}" data-after="Mahalo">Mahalo</a></li>
+					<li><a href="{{url_for('crystal_page')}}" data-after="Crystal Lady">Crystal Lady</a></li>
+					<li><a href="{{url_for('siren_page')}}" data-after="Siren">Siren</a></li>
+					<li><a href="{{url_for('umpalumpa_page')}}" data-after="Umpalumpa">Umpalumpa</a></li>
+					<li><a href="{{url_for('la_liberte_page')}}" data-after="La Liberte">La Liberte</a></li>
+				</ul>
+				<div class="ham">
+					<div class="bar"></div>
+				</div>
+				<div class="footer">
+					<p>
+						<a href="michalkaszas.com">&copy Majky 2021</a>
+					</p>
+				</div>
+			</nav>
+		</header>
+
+		<main id="cocktails">
+			<ul>
+				<li class="drinks mahalo">
+					<a href="{{url_for("mahalo_page")}}"><h1>mahalo</h1></a>
+					<p>rum, pineaple, cocounut, orange</p>
+					<div id="obrazok"></div>
+				</li>
+				<li class="drinks crystal-lady">
+					<a href="{{url_for("crystal_page")}}"><h1>crystal lady</h1></a>
+					<p>vodka, bublegum, rose, prosseco </p>
+					<div id="obrazok"></div>
+				</li>
+				<li class="drinks siren">
+					<a href="{{url_for("siren_page")}}"><h1>siren</h1></a>
+					<p>rum, strawberry, lemon, orange</p>
+					<div id="obrazok"></div>
+				</li>
+				<li class="drinks umpalumpa">
+					<a href="{{url_for("umpalumpa_page")}}"><h1>umpalumpa</h1></a>
+					<p>whiskey, sherry, chcolate, raspberry</p>
+					<div id="obrazok"></div>
+				</li>
+				<li class="drinks la-liberte">
+					<a href="{{url_for("la_liberte_page")}}"><h1>la liberte</h1></a>
+					<p>vodka, curacao, cocounut, </p>
+					<div id="obrazok"></div>
+				</li>
+			</ul>
+		</main>
+	</div>
+
+
+
+	<script type="text/javascript" src="/static/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="/static/js/script.js"></script>
+</body>
+</html>
