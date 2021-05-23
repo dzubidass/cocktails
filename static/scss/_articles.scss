@@ -1,0 +1,228 @@
+//
+// ARTICLES
+// -------------------------------------------------------------------
+
+#cocktails{
+	height: 100vh;
+	width: 100%;
+	background-color: $background_main;
+}
+
+#cocktails ul{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: felx-start;
+	justify-content: space-around;
+}
+
+#cocktails ul li{
+	margin-left: 40px;
+	padding: 5px;
+}
+
+#cocktails li a{
+	font:{
+		size:em(28);
+	}
+}
+
+
+#cocktails .drinks p{
+	display: none;
+}
+
+//
+// COCKTAILS
+// ----------------------------------------------------------------------
+
+//
+//--------------------------------------------------------------------------
+
+//
+// MEDIAQUERIES
+// ---------------------------------------------------------------------------
+@media (min-width: 720px){
+
+
+		#cocktails .drinks p{
+		display: block;
+		color: $color_drinks-p;
+	}
+}
+
+@media (min-width: 950px) {
+
+	#cocktails .drinks p{
+		display: none;
+	}
+
+	#cocktails{
+		width: 100vw;
+	}
+
+	#cocktails ul{
+		flex-direction: row;
+		align-items: flex-end;
+
+		& li{
+			margin-left: 0;
+		}
+	}
+
+	#cocktails li a{
+		position: relative;
+		writing-mode: vertical-lr;
+ 		transform: rotate(180deg);
+ 		font:{
+ 			size: em(40);
+ 		}
+
+ 		& h1{
+ 			color: transparent;
+ 			-webkit-text-stroke: 3px #5E2260;
+ 		}
+	}
+
+	#cocktails li a::after{
+		border-left: .1em solid $color_drinks-p;
+		content: "";
+		position: absolute;
+		right: 70px;
+		top: 0;
+		left: 0;
+		bottom: 100%;
+		transition: bottom .4s cubic-bezier(0,.5,0,1);
+	}
+
+	#cocktails li a:hover::after{
+		animation: anchor-underline 1.4s cubic-bezier(0,.5,0,1) infinite;
+	}
+
+	.drinks{
+	position: relative;
+	z-index: 1;
+}
+
+	.mahalo #obrazok{
+		position: absolute;
+		width: 700px;
+		height: 800px;
+		top: -600px;
+		left: -80px;
+		cursor: none;
+		background: url('../img/mahalo.png')no-repeat center;
+		z-index: -1;
+		visibility: hidden;
+	}
+
+	.crystal-lady #obrazok{
+		position: absolute;
+		width: 500px;
+		height: 600px;
+		top: -400px;
+		left: -100px;
+		cursor: none;
+		background: url('../img/marilyn3.png')no-repeat center;
+		z-index: -1;
+		visibility: hidden;
+	}
+
+	.crystal-lady #obrazok::after{
+		content: '';
+		top: 78px;
+		left: 235px;
+		width: 40px;
+		height: 1px;
+		background-color: black;
+		border: 5px solid black;
+		position: absolute;
+		z-index: -30;
+	}
+
+	.siren #obrazok{
+		position: absolute;
+		width: 300px;
+		height: 750px;
+		top: -750px;
+		left: 0px;
+		cursor: none;
+		background: url('../img/siren.png')no-repeat center;
+		background-color: brown;
+		z-index: -1;
+		visibility: hidden;
+	}
+
+	.umpalumpa #obrazok{
+		position: absolute;
+		width: em(300);
+		height: em(300);
+		top: -250px;
+		left: -200px;
+		transform: rotate(-45deg);
+		cursor: none;
+		background: url('../img/umpalumpa.png')no-repeat center;
+		z-index: -1;
+		border-bottom: 22px dotted blue;
+		border-top:  22px dotted #4250A8;
+		visibility: hidden;
+	}
+
+	.la-liberte #obrazok{
+		position: absolute;
+		width: em(600);
+		height: em(600);
+		top: em(-500);
+		left: em(-800);
+		cursor: none;
+		background: url('../img/liberte2.png');
+		z-index: -1;
+		visibility: hidden;
+	}
+
+	.la-liberte #obrazok::after{
+		content: '';
+		top: 150px;
+		left: 150px;
+		width: 150px;
+		height: 150px;
+		border: 40px solid  #0055A4;
+		background-color: #FFFFFF;
+		position: absolute;
+		z-index: -40;
+	}
+
+	.la-liberte #obrazok::before{
+		content: '';
+		top: 220px;
+		left: 220px;
+		width: 90px;
+		height: 90px;
+		background-color: #EF4135;
+		position: absolute;
+		z-index: -30;
+	}
+
+	.mahalo:hover #obrazok,
+	.crystal-lady:hover #obrazok,
+	.siren:hover #obrazok,
+	.umpalumpa:hover #obrazok,
+	.la-liberte:hover #obrazok{
+		visibility: visible;
+	}
+}
+
+@keyframes anchor-underline{
+	0%,10%{
+		top: 0;
+		bottom: 100%;
+	}
+	40%,60%{
+		top: 0;
+		bottom: 0;
+	}
+	90%,100%{
+		top: 100%;
+		bottom: 0;
+	}
+}

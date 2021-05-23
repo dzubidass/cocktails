@@ -1,0 +1,113 @@
+//
+// STYLES FOR SUB-PAGES
+// ---------------------------------------------------------------------------------------
+
+#menu{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background-color: $color_drinks-p;
+}
+
+.col-left{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 50%;
+}
+.col-left img{
+	position: relative;
+	max-width: 100%;
+	height: 100%;
+}
+
+.col-right{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.col-right h1{
+	padding: 10px;
+	color: $color_attr;
+	color: transparent;
+ 	-webkit-text-stroke: 2px $color_attr;
+	font:{
+		size: 2.5em;
+		family:$font_family_anton;
+	};
+	letter-spacing: .1em;
+}
+
+.col-right ul{
+	margin-bottom: 40px;
+	padding: 10px;
+	list-style: square;
+
+	& li{
+		font:{
+			family:$font_family_anton;
+			size: 2.5em;
+		};
+			font-style: italic;
+		padding: 5px;
+		color: $color_drinks-h1;
+	}
+}
+
+@media (min-width: 720px){
+	.col-right{
+		flex-direction: row;
+	}
+
+	.col-right h1{
+		font-size: 3.5em;
+		writing-mode: vertical-lr;
+ 		transform: rotate(180deg);
+	}
+
+	.col-right ul li{
+		font-size: 3em;
+	}
+}
+
+@media (min-width: 850px){
+	.col-right h1{
+		font-size: 5em;
+		writing-mode: horizontal;
+ 		transform: rotate(-45deg);
+	}
+}
+
+@media (min-width: 1200px){
+	#menu{
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.col-left img{
+		height: 80vh;
+	}
+
+	.col-right{
+		height: 100vh;
+		flex-direction: column;
+
+		& h1{
+			transform: rotate(-90deg);
+			font-size: 6em;
+		}
+	}
+}
+
+@media (min-width: 1500px) {
+	.col-right h1{
+		font-size: 6em;
+	}
+}
